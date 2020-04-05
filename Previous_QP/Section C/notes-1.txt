@@ -1,0 +1,540 @@
+Email: pythoncpp@gmail.com
+Subject: Sunbeam - <batch>
+
+Network
+
+- introduction
+  - interconnecting devices to share the data
+  - device
+    - computer
+    - phone
+      - basic
+      - smart phone: OS
+        - Android
+        - iOS 
+        - Windows Phone OS 
+        - BlackBerry OS
+        - MeeMo
+        - MeeGo
+        - Bada
+        - Tizen
+        - Firefox OS
+        - FireOS
+    - tablet
+    - netbook
+    - notebook
+    - Smart Watch
+      - watchOS: Apple Watch
+      - Android Wear: Sony, Asus
+      - Tizen: Samsung
+    - Smart TV
+      - tvOS: Apple TV
+      - Android TV: Sony
+      - WebOS : LG
+    - Smart Auto
+    - Home Appliances
+      - Coffee Machine
+      - Washing Machines
+      - Fridge
+
+- Units
+  - B: byte
+  - b: bit
+
+- terminology
+  - sender: who sends the data
+  - receiver: who receives the data
+  - CSMA/CD: Carrier Sense Multiple Access / Collision Detection 
+  - NIC: Network Interface Card
+  - casting: sending packets/data from one device to another
+    - unicast
+      - sending the data to only one device
+    - multicast
+      - sending the data to multiple devices
+    - broadcast
+      - sending the data to all the devices in the network
+  - ping:
+    - command used to check the connectivity between the machines
+    - e.g. ping google.co.in, ping 10.30.50.60
+  - Network: group of devices (IP addresses)
+  - Host: device which is connected to the network
+  - port: number given to every process (program) running on a machine 
+
+- types
+  - wired
+    - medium: wire/cable
+    - cables
+      - coaxial
+      - cat cable (category)
+        - also called as Twisted Pairs cable
+        - length: 500m
+        - types
+          - STP: Shielded Twisted Pairs
+          - UTP:p Unshielded Twisted Pairs
+        - versions
+          - cat 1: used for telephones
+          - cat 2: 4Mbps
+          - cat 3: 10Mbps
+          - cat 4: 16Mbps
+          - cat 5: 100 Mbps
+          - cat 5e: 125 Mbps
+          - cat 6: 1000Mbps => 1Gbps
+          - cat 6a: 1000Mbps => 1Gbps
+          - cat 7: 10000Mbps => 10Gbps
+          - cat 8: not yet released
+      - optical fibre
+        - 10Gbps+
+        - KMs
+    - types
+      - LAN: Local Area Network
+        - with hub/switch
+      - MAN: Metropolitan Area Network
+      - WAN: Wide Area Network
+        - with router
+      - CAN: Campus Area Network
+
+  - wireless
+    - medium: air (EM Waves)
+    - types
+      - PAN: 
+        - Personal Area Network
+        - e.g. BlueTooth, NFC
+      - WLAN: Wireless LAN
+      - GSM:
+        - Groupe´ Speciale´ Mobile´ 
+        - Global System For Mobile Communication
+      - CDMA: Code Division Multiple Access
+
+- topologies
+  - physical arrangement of devices
+  - types
+    - bus
+    - ring
+    - connecting ring
+    - star
+    - mesh
+
+- address schemes
+  - MAC address
+    - Media Access Control 
+    - identifies a NIC uniquely 
+    - also called as Physical Address
+    - which CAN NOT be changed (readonly address)
+    - embedded in the NIC's micro controller 
+    - used at data link layer of OSI model
+    - to find out the MAC address
+      - Linux/Mac: ifconfig
+      - Windows: ipconfig /all
+    - format:
+     
+      Octate 1: Octate 2: Octate 3: Octate 4: Octate 5: Octate 6
+    
+    - group of first three octates (bytes) will identify the manufacturer uniquely
+    - group of last three octates (bytes) will identify the NIC uniquely
+
+
+    - size: 6 bytes => 6x8 => 48 bits
+
+
+  - IP address
+    - used at Network layer
+    - used to identify a machine uniquely 
+    - also called a Logical Address
+    - every machine connected to internet has to have an IP address 
+    - to find the IP address
+      - Linux/Mac: ifconfig
+      - Windows: ipconfig
+    - format
+      octate1.octate2.octate3.octate4
+    - types
+  
+      Decimal: 2.3.4.5
+      Binary: 00000010.00000011.00000100.00000101
+
+    - size: 4 bytes => 4x8 => 32 bits
+    - types
+      - private
+        - used to connect to local network
+      - public
+        - used to connect to Internet 
+
+    - versions
+      - IPv4: 32 bit
+      - IPv6: 128 bit
+
+    - classfull
+      - class A
+        - range: 0.0.0.0 - 127.255.255.255
+        - private: 10.0.0.0 - 10.255.255.255
+        - format: N.H.H.H
+        - networks: 2^8 = 256
+        - hosts per network: 2^24 = 16m
+        - default subnet mask: 255.0.0.0
+        - reserved
+          - 127.0.0.0 - 127.255.255.255
+            - loopback addresses 
+            - 127.0.0.1: loopback address of localhost
+          - network address: first address in the series
+          - broadcast address: last address in the series
+
+      - class B
+        - range: 128.0.0.0 - 191.255.255.255
+        - private: 172.16.0.0 - 172.31.255.255
+        - format: N.N.H.H
+        - networks: 2^16 = 65536
+        - hosts per network: 2^16 = 65536
+        - default subnet mask: 255.255.0.0
+        - reserved:
+          - network address: first address in the series
+          - broadcast address: last address in the series
+
+      - class C
+        - range: 192.0.0.0 - 223.255.255.255
+        - private: 192.168.0.0 - 192.168.255.255
+        - format: N.N.N.H
+        - networks: 2^24 = 16m
+        - hosts per network: 2^8 = 256
+        - default subnet mask: 255.255.255.0
+        - reserved:
+          - network address: first address in the series
+          - broadcast address: last address in the series
+
+      - class D
+        - range: 224.0.0.0 - 239.255.255.255
+        - reserved for multicasting
+
+      - class E
+        - range: 240.0.0.0 - 255.255.255.255
+        - reserved for research
+
+ 
+IP address: 192.168.1.1 - 192.168.1.100 
+Network address: 192.168.1.0
+Broadcast address: 192.168.1.255
+
+
+00000000.00000000.00000000.00000000
+11111111.11111111.11111111.11111111
+
+IP address: 			172.16.4.6
+Default subnet mask:		255.255.0.0
+---------------------------------------
+Network address:		172.16.0.0
+
+10101100.00010000.00000100.00000110
+11111111.11111111.00000000.00000000
+------------------------------------
+10101100.00010000.00000000.00000000
+
+
+
+    - classless (CIDR)
+      - classless Inter Domain Routing
+
+// classfull
+Hosts: 100
+Class: Class C
+Default subnet mask: 255.255.255.0
+IP range: 192.168.1.0 - 192.168.1.255
+Hosts per network: 256 - 2 = 254
+-> network address: 192.168.1.0
+   Broadcast address: 192.168.1.255
+
+E.g.: 192.168.1.40
+Network address: 192.168.1.0
+
+E.g.: 192.168.1.140
+Network address: 192.168.1.0
+
+
+// classless
+Hosts: 100
+Class: Class C
+Subnet Mask: 255.255.255.128
+
+Subnet 1 range: 192.168.1.0 - 192.168.1.127
+-> sub-network address: 192.168.1.0
+   Broadcast address: 192.168.1.127
+
+Subnet 2 range: 192.168.1.128 - 192.168.1.255
+-> sub-network address: 192.168.1.128
+   Broadcast address: 192.168.1.255
+
+E.g.: 192.168.1.40
+00101000
+10000000
+--------
+00000000
+Network address: 192.168.1.0
+
+E.g.: 192.168.1.140
+10001100
+10000000
+--------
+10000000
+Network address: 192.168.1.128
+
+192.168.1.159
+10011111 -> 159
+10000000 -> 128
+--------
+10000000 -> 128
+Network address: 192.168.1.128
+
+
+Subnet mask						subnet		networks	hosts		decimal
+11111111.11111111.11111111.		00000000	0		2^24		2^8 = 256	.0   /24
+11111111.11111111.11111111.1		0000000		2^1 = 2		2^24		2^7 = 128	.128 /25
+11111111.11111111.11111111.11		000000		2^2 = 4		2^24		2^6 = 64	.192 /26
+11111111.11111111.11111111.111		00000		2^3 = 8		2^24		2^5 = 32	.224 /27
+11111111.11111111.11111111.1111		0000		2^4 = 16	2^24		2^4 = 16	.240
+11111111.11111111.11111111.11111	000		2^5 = 32	2^24		2^3 = 8		.248
+11111111.11111111.11111111.111111	00		2^6 = 64	2^24		2^2 = 4		.252
+11111111.11111111.11111111.1111111	0		2^7 = 128	2^24		2^1 = 2		.254
+[11111111.11111111.11111111.11111111			2^8 = 256	2^24		2^0 = 1		.255]
+
+
+Class B: 172.16.0.0 - 172.31.255.255
+Default SM: 255.255.0.0
+
+Subnet mask						subnet		networks	hosts		decimal
+11111111.11111111.		00000000.00000000	0		2^16		2^16		.0.0   /16
+11111111.11111111. 1		0000000.00000000	2^1		2^16		2^15		.128.0 /17
+11111111.11111111. 11		000000.00000000		2^2		2^16		2^14		.192.0 /18
+11111111.11111111. 111		00000.00000000		2^3		2^16		2^13		.224.0
+11111111.11111111. 1111		0000.00000000		2^4		2^16		2^12		.240.0
+11111111.11111111. 11111	000.00000000		2^5		2^16		2^11		.248.0
+11111111.11111111. 111111	00.00000000		2^6		2^16		2^10		.252.0
+11111111.11111111. 1111111	0.00000000		2^7		2^16		2^9		.254.0
+11111111.11111111. 11111111	.00000000		2^8		2^16		2^8		.255.0
+11111111.11111111. 11111111.1		0000000		2^9		2^16		2^7 = 128	.128
+11111111.11111111. 11111111.11		000000		2^10		2^16		2^6 = 64	.192
+11111111.11111111. 11111111.111		00000		2^11		2^16		2^5 = 32	.224
+11111111.11111111. 11111111.1111	0000		2^12		2^16		2^4 = 16	.240
+11111111.11111111. 11111111.11111	000		2^13		2^16		2^3 = 8		.248
+11111111.11111111. 11111111.111111	00		2^14		2^16		2^2 = 4		.252
+11111111.11111111. 11111111.1111111	0		2^15		2^16		2^1 = 2		.254
+[11111111.11111111.11111111.11111111			2^16	2^16		2^0 = 1		.255]
+
+
+
+
+Tricks
+- 2^0: 1
+  2^1: 2
+  2^2: 4
+  2^3: 8
+  2^4: 16
+  2^5: 32
+  2^6: 64
+  2^7: 128
+  2^8: 256
+
+- 00000000: 0
+  10000000: 128
+  11000000: 192
+  11100000: 224
+  11110000: 240
+  11111000: 248
+  11111100: 252
+  11111110: 254
+  11111111: 255
+
+
+- Hub
+  - used to build a LAN
+  - a physical layer device
+  - a layer 1 device 
+  - deals with the signals
+  - network performance (speed) will be the lowest
+
+- Switch
+  - used to build a LAN
+  - a data link layer device
+  - a layer 2 device
+  - an intelligent device 
+
+- Router
+  - used to build a WAN
+  - used to connect different networks (logical)
+  - a network layer device 
+  - a layer 3 device 
+
+
+- ISO OSI model
+  - Application
+    - creates the data to be shared
+    - protocols: http, https, ftp, tftp, sftp, ftps, ssh, telnet, dns, dhcp, arp
+  - Presentation
+    - decides the common file formats / algorithms used between machines 
+    - e.g. (content-type)
+      - text
+        - plain: text/plain
+        - xml: text/xml
+        - json: application/json
+        - docx: application/docx
+      - image
+        - image/png
+        - image/jpg
+        - image/jpeg
+        - image/bmp
+      - audio
+        - audio/wav
+        - audio/mp3
+      - video
+        - video/mp4
+        - video/flv
+        - video/divx
+
+  - Session
+    - responsible for managing the session between the machines
+    - e.g. sip
+
+  - Transport
+    - responsible for transferring data from one to the other machine
+    - e.g. tcp, udp, tls
+  - Network
+    - responsible for identifying the machines with IP address
+    - converts the segment into packets
+    - e.g. IP, IPSec
+  - Data Link
+    - responsible for identifying the machine with MAC address
+    - e.g. PPP
+  - Physical
+
+
+- protocol
+  - set of rules
+  - http (80): hyper text transfer protocol
+  - https (443): secure hyper text transfer protocol
+  - ftp (20: control, 21: data): file transfer protocol
+  - tftp: trivial file transfer protocol
+  - sftp: secure file transfer protocol
+  - ssh (22): secure shell (used to connect to the remote machine)
+  - ftps: ftp + ssh
+  - telnet (23): used to configure the device (networking)
+  - DNS (53): domain name service (used to translate domain name to IP address) 
+  - dhcp: dynamic host configuration protocol 
+  - arp: Address Resolution Protocol (used to get physical address from logical address)
+  - sip: session initiation protocol
+  - tcp:
+    - transmission control protocol 
+    - reliable protocol
+    - connection oriented protocol 
+    - keeps the connection alive till the end of the data transfer
+    - flow control
+    - sequencing 
+    - error control / checking
+    - slower than UDP
+    - e.g. ssh, ftp
+  - udp:
+    - user datagram protocol 
+    - unreliable protocol 
+    - connection less protocol 
+    - faster than TCP
+    - e.g. dns, video streaming, multiplayer games
+  - ip: internet protocol
+  - IPSec: secure IP
+  - ppp: point-to-point protocol 
+
+- IP header
+  - Version: version of IP protocol (IPv4/IPv6)
+  - IHL: internet header length
+  - DSCP: differential Service Code Point (Type of Service: ToS)
+  - ECN: Explicit Congestion Notification 
+  - Total Length: header length + payload (data) length
+  - Identification: whether the packet needs the fragmentation 
+  - Flags: whether the packet is fragmented
+  - Fragment Offset: the sequence number of the fragments
+  - TTL: Time To Live (after this time the packet will be discarded)
+  - Protocol: selected protocol on the transport layer (TCP: 6, UDP: 17)
+  - Header Checksum: used to check if the received packet is tampered
+  - Source Address:
+  - Destination Address:
+  - Options: contains more flag options
+
+
+Question types
+- find the type of IP address
+  - 17.172.224.47: public IP address of class A
+  - 172.20.10.11: private IP address of class B
+
+- find the class of an IP address 
+  - 10.16.13.45: class A
+  - 192.168.1.49: class C
+
+- find the class by using the information:
+  - number of hosts/devices/IP address : 100
+  - number of networks: 5
+  -- class C
+
+  - number of hosts/devices/IP address : 100
+  - number of networks: 1000
+  -- class C
+
+  - number of hosts/devices/IP address : 1000
+  - number of networks: 1000
+  -- class B
+
+/************* invalid example **************
+  - number of hosts/devices/IP address : 1000
+  - number of networks: 100000
+  -- class A
+/********************************************
+
+- find out the network address of an IP address: 
+  - 192.168.4.6: 192.168.4.0
+  - 17.254.254.254: 17.0.0.0
+
+- which class provides
+  - max number of hosts: class A
+  - max number of networks: class C
+
+- given the IP address and subnet mask find bits used for network, subnet, hosts
+  - Class A with Subnet mask 255.255.240.0
+    - network: 8
+    - subnet: 12
+    - hosts: 12
+
+- with /26
+  - 11111111.11111111.11111111.11000000
+  - 255.255.255.192
+
+
+*** Rules ***
+- a device can share data with other device connected to network if both of the devices are in the same network
+  - network address of both the devices must be SAME
+- the frame delivery will be done on the basis of MAC Address
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

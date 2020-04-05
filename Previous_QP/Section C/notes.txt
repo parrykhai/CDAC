@@ -1,0 +1,362 @@
+* networking
+
+* basics
+  - definition
+    - group or collection of machines / devices
+    - devices
+      - mobile
+        - cell phone
+        - phablet 
+        - tablet
+        - netbook
+        - notebook
+        - smart phone
+        - smart watches
+        - smart glass
+        - smart TV
+      - kitchen appliances
+        - microwave oven
+        - coffee maker
+  - exchange the information 
+  - standard (802)
+    - 802.3: ethernet 
+    - 802.3u: fast ethernet 
+    - 802.11: WiFi
+    - 802.15: BlueTooth
+  - unit
+    - B: bytes
+    - b: bits
+  - types
+    - wired
+      - medium: wire / cable
+      - cables
+        - co-axial 
+        - cat cables (category)
+          - twisted pairs (4pairs)
+          - types
+            - UTP: Unshielded Twisted Pairs
+            - STP: Shielded Twisted Pairs
+          - versions
+            - cat 3: 10Mbps
+            - cat 4: -
+            - cat 5: 100Mbps
+            - cat 5e: 125Mbps
+            - cat 6: 1000Mbps ~ 1Gbps
+        - optical fiber
+      - topology
+        - physical arrangement of machines
+        - types
+          - Bus
+          - Ring
+          - Connected Ring
+          - Star
+          - Mesh
+          - Hybrid
+      - types
+        - LAN: Local Area Network
+        - MAN: Metropolitan Area Network
+        - WAN: Wide Area Network
+        - CAN: Campus Area Network
+    - wireless
+      - medium: air / EM Waves
+      - types
+        - PAN: 
+          - Personal Area Network
+          - e.g. BlueTooth, ZigBee, NFC
+        - WLAN: Wireless LAN
+        - GSM:
+          - Groupe´ Spéciale´ Mobile´
+          - Global System for Mobile communication 
+        - CDMA
+          - Code Division Multiple Access
+        
+
+* Hub Vs Switch Vs Router
+  - Hub
+    - used to create LAN
+    - works in physical layer
+    - traffic increases
+    - collision increases
+    - speed/performance goes down 
+  - Switch
+    - used to create LAN
+    - works in data link layer
+    - creates less collisions
+    - the speed / performance goes up
+    - has its own OS
+      - Cisco: OS for switches/routers -> Ios (Apple iOS -> iPhone/iPad/iPod)
+  - Router
+    - used to create WAN
+    - works inn network layer
+
+* addressing schemes
+  - MAC address
+    - also called as physical address
+    - Media Access Control address 
+    - implemented in data link layer
+    - is hardwired in NIC (network interface card)
+    - identifies every NIC uniquely 
+    - format: MM:MM:MM:NN:NN:NN
+    - size: 6 bytes ~ 48 bits
+    - the first 3 bytes identify the manufacturer 
+    - the last 3 bytes identify the unique number of NIC given by manufacturer
+    - to find the Mac address of machine
+      - windows: ipconfig /all
+      - Linux/Mac: ifconfig
+  - IP Address 
+    - Internet Protocol
+    - used to identify a machine/device uniquely
+    - also called as logical address
+    - format: N.N.N.N
+      - decimal: 0.0.0.0 to 255.255.255.255
+      - binary: 00000000.00000000.00000000.00000000 to
+                11111111.11111111.11111111.11111111
+    - size: 4 bytes ~ 32 bits
+    - types
+      - private IP address
+        - used to communicate with devices within the LAN
+      - public IP address
+        - used to communicate with devices over internet 
+    - subnet mask:
+      - used to calculate the network address/id
+    - reserved IP address
+      - Class A
+        - x.0.0.0 (network id/address)
+        - x.255.255.255 (broadcast address)
+      - Class B
+        - x.x.0.0 (network id/address)
+        - x.x.255.255 (broadcast address)
+      - Class C
+        - x.x.x.0 (network id/address)
+        - x.x.x.255 (broadcast address)
+    - class-full
+      - class A
+        - range: 0.0.0.0 to 127.255.255.255
+        - can not use
+          - 127.x.x.x (127.0.0.0 to 127.255.255.255)
+            - reserved for loopback address
+            - e.g. 127.0.0.1 (loopback address for the same machine / localhost)
+        - private: 10.x.x.x (10.0.0.0 - 10.255.255.255)
+        - format: 
+          - N.H.H.H
+          - 11111111.00000000.00000000.00000000
+        - networks: 2^8
+        - hosts: 2^24
+        - subnet mask: 255.0.0.0
+
+      - class B
+        - range: 128.0.0.0 to 191.255.255.255
+        - private: 172.16.x.x - 172.32.x.x
+        - format: 
+          - N.N.H.H
+          - 11111111.11111111.00000000.00000000
+        - networks: 2^16
+        - hosts: 2^16
+        - subnet mask: 255.255.0.0
+
+      - class C
+        - range: 192.0.0.0 to 223.255.255.255
+        - private: 192.168.x.x
+        - format: 
+          - N.N.N.H
+          - 11111111.11111111.11111111.00000000
+        - networks: 2^24
+        - hosts: 2^8
+        - subnet mask: 255.255.255.0
+
+      - class D
+        - range: 224.0.0.0 to 239.255.255.255
+        - reserved for multicasting
+
+      - class E
+        - range: 240.0.0.0 to 255.255.255.255
+        - reserved for research tasks
+
+* Cast
+  - unicast
+    - sending a data packet to only one device at a time
+  - broadcast
+    - sending a data packet to all the devices in the network at a time
+  - multicast
+    - sending a data packet to multiple devices in the network at a time
+
+* standards
+  - application layer
+    - dns
+      - domain name service (53)
+      - used to map the IP address with domain name
+    - DHCP
+      - dynamic host configuration protocol
+      - used to assign the dynamic private ip addresses
+    - http (80): hyper text transfer protocol
+    - https (443): secure hyper text transfer protocol 
+    - ftp (20/21): file transfer protocol 
+    - ftps: file transfer protocol using ssh
+    - sftp: secure file transfer protocol 
+    - ssh (22): secure shell
+    - smtp: simple mail transfer protocol
+    - pop3: post office protocol
+    - telnet (23): used to configure the network devices remotely
+    - arp: 
+      - address resolution protocol
+      - used to get the physical (Mac) address of a device using logical (IP) address 
+  - presentation layer
+    - image: png/jpeg/jpg/gif/bmp
+    - audio: mp3/wav
+    - video: mp4/div/divx/flv
+    - text: plain/json/xml
+    - archive: zip/gzip/tar
+  - session layer
+    - sip: session initiation protocol
+  - transport layer
+    - TCP
+      - transmission control protocol
+      - connection oriented protocol
+      - flow control, error checking 
+      - slower than UDP
+      - e.g. online banking
+    - UDP
+      - user datagram protocol
+      - connectionless protocol
+      - faster than TCP
+      - e.g. video streaming, online multiplayer games, dns
+   -
+
+* ISO OSI
+  - reference model
+  - layered architecture
+  - layers
+    - Application
+    - Presentation
+    - Session
+    - Transport
+    - Network
+      - the addressing scheme is: IP address
+    - Data Link
+      - the addressing scheme is: MAC address 
+    - Physical
+      - concerned about the signals/physical devices
+
+
+
+// class A
+H: 10.4.5.7
+S: 255.0.0.0
+-------------
+N: 10.0.0.0
+
+// class B
+H: 152.34.56.89
+S: 255.255.0.0
+-------------
+N: 152.34.0.0
+
+// class C
+H: 192.168.1.40		<- 11000000.10101000.00000001.00101000
+S: 255.255.255.0		<- 11111111.11111111.11111111.00000000
+---------------------------------------------------------
+N: 192.168.1.0		<- 11000000.10101000.00000001.00000000
+
+Network (group): range
+192.168.1.0: 	192.168.1.1 - 192.168.1.255
+192.168.2.0: 	192.168.2.1 - 192.168.2.255
+192.168.3.0: 	192.168.3.1 - 192.168.3.255
+192.168.4.0: 	192.168.4.1 - 192.168.4.255
+192.168.5.0: 	192.168.5.1 - 192.168.5.255
+192.168.6.0: 	192.168.6.1 - 192.168.6.255
+
+
+
+- network with 95 devices
+  - class C
+  - 192.168.1.x
+  - default subnet mask: 255.255.255.0 	-> 256
+  - subnet mask: 255.255.255.128		-> 128
+  - networks: 2^24
+  - hosts: 2^8 -> 256
+  - network id: 192.168.1.0
+  - range: 192.168.1.1 - 192.168.1.254
+  - 
+
+192.168.1.35
+255.255.255.0
+--------------
+192.168.1.0
+
+192.168.1.135
+255.255.255.0
+--------------
+192.168.1.0
+
+
+-> 255.255.255.0
+192.168.1.0 	- 192.168.1.255
+
+-> 255.255.255.128
+192.168.1.0  	- 192.168.1.127
+192.168.1.128 	- 192.168.1.255
+
+-> 255.255.255.192
+192.168.1.0  	- 192.168.1.63
+192.168.1.64  	- 192.168.1.127
+192.168.1.128 	- 192.168.1.191
+192.168.1.192 	- 192.168.1.255
+
+
+192.168.1.35		-> 00100011
+255.255.255.128		-> 10000000
+-----------------------------------
+192.168.1.0			-> 00000000
+
+192.168.1.135		-> 10000111
+255.255.255.128		-> 10000000
+-----------------------------------
+192.168.1.128		-> 10000000
+
+
+----------- Network--------  ----- subnet----  -- host ---		-> decimal	-> hosts
+Class C
+
+[11111111.11111111.11111111] 	. 			[00000000]		-> 0		-> 2^8 = 256
+[11111111.11111111.11111111.	[1] 			[0000000]		-> 128	-> 2^7 = 128
+[11111111.11111111.11111111.	[11] 			[000000]		-> 192	-> 2^6 = 64
+[11111111.11111111.11111111.	[111] 		[00000]		-> 224	-> 2^5 = 32
+[11111111.11111111.11111111.	[1111] 		[0000]		-> 240	-> 2^4 = 16
+[11111111.11111111.11111111.	[11111] 		[000]			-> 248	-> 2^3 = 8
+[11111111.11111111.11111111.	[111111] 		[00]			-> 252	-> 2^2 = 4
+[11111111.11111111.11111111.	[1111111] 		[0]			-> 254	-> 2^1 = 2
+[11111111.11111111.11111111.	[11111111] 		[]			-> 255	-> 2^0 = 1
+
+
+
+
+
+Class B
+----------- Network--------  ----- subnet----  -- host ---				-> decimal	-> hosts
+[11111111.11111111] . 					[00000000.00000000]		-> 0.0	-> 2^16 
+[11111111.11111111] . 		[1]			[0000000.00000000]		-> 128.0	-> 2^15 
+[11111111.11111111] . 		[11]			[000000.00000000]			-> 192.0	-> 2^14
+..
+[11111111.11111111] . 		[11111111]		[.00000000]				-> 255.0	-> 2^8
+[11111111.11111111] . 		[11111111.1]	[0000000]				-> 255.128	-> 2^7
+..
+[11111111.11111111] . 		[11111111.1111]	[0000]				-> 255.240	-> 2^4
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
